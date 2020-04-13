@@ -7,5 +7,5 @@ func main() {
 	r.GET("/", func(c *gin.Context) {
 		c.String(200, "Greetings from Gin! \n\nThis web app host on FunctionCompute of Aliyun.")
 	})
-	r.Run() // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
+	r.Run(":9000")
 }

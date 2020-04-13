@@ -12,5 +12,6 @@ func (this *MainController) Get() {
 
 func main() {
 	beego.Router("/", &MainController{})
+	beego.BConfig.Listen.HTTPPort = 9000
 	beego.Run()
 }
