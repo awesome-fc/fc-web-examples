@@ -1,6 +1,7 @@
 /* eslint valid-jsdoc: "off" */
 
 'use strict';
+const path = require('path');
 
 /**
  * @param {Egg.EggAppInfo} appInfo app info
@@ -17,6 +18,19 @@ module.exports = appInfo => {
 
   // add your middleware config here
   config.middleware = [];
+
+  config.view = {
+    root: [
+      path.join(appInfo.baseDir, 'app/view')
+    ].join(','),
+
+    mapping: {
+      '.nj': 'nunjucks'
+    },
+
+    defaultViewEngine: 'nunjucks',
+    defaultExtension: '.nj',
+  };
 
   // add your user config here
   const userConfig = {

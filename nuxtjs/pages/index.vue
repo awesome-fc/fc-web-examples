@@ -3,21 +3,21 @@
     <div>
       <logo />
       <h1 class="title">
-        nuxtjs
+        Greetings from Nuxt.js!
       </h1>
       <h2 class="subtitle">
-        My amazing Nuxt.js project
+        This web app host on <a href="https://www.aliyun.com/product/fc" target="_blank">FunctionCompute</a> of Aliyun.
       </h2>
       <div class="links">
         <a
-          href="https://nuxtjs.org/"
+          href="https://help.aliyun.com/document_detail/157957.html"
           target="_blank"
           class="button--green"
         >
           Documentation
         </a>
         <a
-          href="https://github.com/nuxt/nuxt.js"
+          href="https://github.com/awesome-fc/fc-web-examples/tree/master/nuxtjs"
           target="_blank"
           class="button--grey"
         >
@@ -53,14 +53,14 @@ export default {
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   display: block;
   font-weight: 300;
-  font-size: 100px;
+  font-size: 50px;
   color: #35495e;
   letter-spacing: 1px;
 }
 
 .subtitle {
   font-weight: 300;
-  font-size: 42px;
+  font-size: 22px;
   color: #526488;
   word-spacing: 5px;
   padding-bottom: 15px;

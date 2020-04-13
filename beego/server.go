@@ -7,7 +7,7 @@ type MainController struct {
 }
 
 func (this *MainController) Get() {
-	this.Ctx.WriteString("Greetings from Beego!\n\nThis web app host on FunctionCompute of Aliyun.")
+	this.TplName = "index.tpl"
 }
 
 func main() {

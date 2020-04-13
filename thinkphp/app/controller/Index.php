@@ -7,7 +7,10 @@ class Index extends BaseController
 {
     public function index()
     {
-        return 'Greetings from ThinkPHP V' . \think\facade\App::version() . '.<br/><br/>This web app host on FunctionCompute of Aliyun.';
+
+        return view('index', [
+            'version'  => \think\facade\App::version()
+        ]);
     }
 
     public function hello($name = 'ThinkPHP6')
