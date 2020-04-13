@@ -15,7 +15,7 @@ nextjs_build:
 
 nextjs_package: prepare
 	cd nextjs && \
-		zip -q -y -r $(realpath $(dist))/nextjs.zip *
+		zip -q -y -r $(realpath $(dist))/nextjs.zip .
 
 nuxtjs_build:
 	cd nuxtjs && \
@@ -24,7 +24,7 @@ nuxtjs_build:
 
 nuxtjs_package: prepare
 	cd nuxtjs && \
-		zip -q -y -r $(realpath $(dist))/nuxtjs.zip *
+		zip -q -y -r $(realpath $(dist))/nuxtjs.zip .
 
 expressjs_build:
 	cd expressjs && \
@@ -32,15 +32,17 @@ expressjs_build:
 
 expressjs_package: prepare
 	cd expressjs && \
-		zip -q -y -r $(realpath $(dist))/expressjs.zip *
+		zip -q -y -r $(realpath $(dist))/expressjs.zip .
 
 eggjs_build:
 	cd eggjs && \
-		npm i 
+		npm i && \
+		npm start && \
+		npm stop
 
 eggjs_package: prepare
 	cd eggjs && \
-		zip -q -y -r $(realpath $(dist))/eggjs.zip *
+		zip -q -y -r $(realpath $(dist))/eggjs.zip .
 
 springboot_build:
 	cd springboot && \
@@ -55,7 +57,7 @@ beego_build:
 
 beego_package: prepare
 	cd beego && \
-		zip -q -y -r $(realpath $(dist))/beego.zip *
+		zip -q -y -r $(realpath $(dist))/beego.zip .
 
 gin_build:
 	cd gin && \
@@ -63,7 +65,7 @@ gin_build:
 
 gin_package: prepare
 	cd gin && \
-		zip -q -y -r $(realpath $(dist))/gin.zip *
+		zip -q -y -r $(realpath $(dist))/gin.zip .
 
 thinkphp_build:
 	cd thinkphp && \
@@ -71,11 +73,11 @@ thinkphp_build:
 
 thinkphp_package: prepare
 	cd thinkphp && \
-		zip -q -y -r $(realpath $(dist))/thinkphp.zip *
+		zip -q -y -r $(realpath $(dist))/thinkphp.zip .
 
 build: nextjs_build nuxtjs_build expressjs_build eggjs_build beego_build gin_build springboot_build thinkphp_build
 
-package: nextjs_package nuxtjs_package expressjs_package eggjs_package beego_package gin_package springboot_package thinkphp_package
+package: clean nextjs_package nuxtjs_package expressjs_package eggjs_package beego_package gin_package springboot_package thinkphp_package
 
 publish:
 	./publish.sh
