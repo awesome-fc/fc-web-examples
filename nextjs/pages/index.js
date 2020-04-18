@@ -30,7 +30,7 @@ const Home = () => (
             Greetings from Next.js!
           </h1>
           <h2 className="subtitle">
-            This web app host on <a href="https://www.aliyun.com/product/fc" target="_blank">FunctionCompute</a> of Aliyun.
+          The web app is hosted on Aliyun <a href="https://www.aliyun.com/product/fc" target="_blank">FunctionCompute</a>.
           </h2>
           <div className="links">
             <a

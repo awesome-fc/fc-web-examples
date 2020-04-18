@@ -69,7 +69,7 @@ gin_package: prepare
 
 thinkphp_build:
 	cd thinkphp && \
-		composer update
+		composer install
 
 thinkphp_package: prepare
 	cd thinkphp && \
