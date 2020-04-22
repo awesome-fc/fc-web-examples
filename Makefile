@@ -75,9 +75,17 @@ thinkphp_package: prepare
 	cd thinkphp && \
 		zip -q -y -r $(realpath $(dist))/thinkphp.zip .
 
-build: nextjs_build nuxtjs_build expressjs_build eggjs_build beego_build gin_build springboot_build thinkphp_build
+laravel_build:
+	cd laravel && \
+		composer install
 
-package: clean nextjs_package nuxtjs_package expressjs_package eggjs_package beego_package gin_package springboot_package thinkphp_package
+laravel_package: prepare
+	cd laravel && \
+		zip -q -y -r $(realpath $(dist))/laravel.zip .
+
+build: nextjs_build nuxtjs_build expressjs_build eggjs_build beego_build gin_build springboot_build thinkphp_build laravel_build
+
+package: clean nextjs_package nuxtjs_package expressjs_package eggjs_package beego_package gin_package springboot_package thinkphp_package laravel_package
 
 publish:
 	./publish.sh
