@@ -2,4 +2,5 @@
 .oss*
 .DS_Store
 .vscode/
+node_modules/
 .fun/
