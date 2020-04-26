@@ -51,6 +51,13 @@ springboot_build:
 springboot_package: prepare
 	cp springboot/target/demo-*.jar $(realpath $(dist))/springboot.jar
 
+war_build:
+	cd war && \
+		mvn package
+
+war_package: prepare
+	cp war/target/javawebapp.war $(realpath $(dist))/javawebapp.war
+
 beego_build:
 	cd beego && \
 		GOPROXY=https://goproxy.io GOARCH=amd64 GOOS=linux go build
@@ -75,9 +82,9 @@ thinkphp_package: prepare
 	cd thinkphp && \
 		zip -q -y -r $(realpath $(dist))/thinkphp.zip .
 
-build: nextjs_build nuxtjs_build expressjs_build eggjs_build beego_build gin_build springboot_build thinkphp_build
+build: nextjs_build nuxtjs_build expressjs_build eggjs_build beego_build gin_build springboot_build thinkphp_build war_build
 
-package: clean nextjs_package nuxtjs_package expressjs_package eggjs_package beego_package gin_package springboot_package thinkphp_package
+package: clean nextjs_package nuxtjs_package expressjs_package eggjs_package beego_package gin_package springboot_package thinkphp_package war_package
 
 publish:
 	./publish.sh
