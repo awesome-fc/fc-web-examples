@@ -33,6 +33,14 @@ expressjs_build:
 expressjs_package: prepare
 	cd expressjs && \
 		zip -q -y -r $(realpath $(dist))/expressjs.zip .
+	
+koa_build:
+	cd koa && \
+		npm i 
+
+koa_package: prepare
+	cd koa && \
+		zip -q -y -r $(realpath $(dist))/koa.zip .
 
 eggjs_build:
 	cd eggjs && \
@@ -90,9 +98,9 @@ laravel_package: prepare
 	cd laravel && \
 		zip -q -y -r $(realpath $(dist))/laravel.zip .
 
-build: nextjs_build nuxtjs_build expressjs_build eggjs_build beego_build gin_build springboot_build thinkphp_build laravel_build war_build
+build: nextjs_build nuxtjs_build expressjs_build eggjs_build beego_build gin_build springboot_build thinkphp_build laravel_build war_build koa_build
 
-package: clean nextjs_package nuxtjs_package expressjs_package eggjs_package beego_package gin_package springboot_package thinkphp_package laravel_package war_package
+package: clean nextjs_package nuxtjs_package expressjs_package eggjs_package beego_package gin_package springboot_package thinkphp_package laravel_package war_package koa_package
 
 publish:
 	./publish.sh
