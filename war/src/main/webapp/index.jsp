@@ -97,14 +97,14 @@ html {
       </h2>
       <div class="links">
         <a
-          href="https://help.aliyun.com/document_detail/159157.html"
+          href="#"
           target="_blank"
           class="button--green"
         >
           Documentation
         </a>
         <a
-          href="https://github.com/awesome-fc/fc-web-examples/tree/master/gin"
+          href="https://github.com/awesome-fc/fc-web-examples/tree/master/war"
           target="_blank"
           class="button--grey"
         >
