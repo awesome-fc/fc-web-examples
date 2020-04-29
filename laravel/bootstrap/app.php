@@ -15,7 +15,7 @@ $app = new Illuminate\Foundation\Application(
     $_ENV['APP_BASE_PATH'] ?? dirname(__DIR__)
 );
 
-$app->useStoragePath(env('STORAGE_PATH', '/tmp/storage'));
+$app->useStoragePath(env('STORAGE_PATH', dirname(__DIR__) . '/storage'));
 
 /*
 |--------------------------------------------------------------------------

@@ -92,11 +92,16 @@ thinkphp_package: prepare
 
 laravel_build:
 	cd laravel && \
-		composer install
+		composer install && \
+		php artisan key:generate
 
 laravel_package: prepare
 	cd laravel && \
 		zip -q -y -r $(realpath $(dist))/laravel.zip .
+
+django_package: prepare
+	cd django && \
+		zip -q -y -r $(realpath $(dist))/django.zip .
 
 build: nextjs_build nuxtjs_build expressjs_build eggjs_build beego_build gin_build springboot_build thinkphp_build laravel_build war_build koa_build
 
